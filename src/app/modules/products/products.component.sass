@@ -1,0 +1,107 @@
+@import '../../../assets/styles/_colors'
+
+.container
+  width: 100%
+  margin: auto
+  color: $color-black
+
+  .loading
+    text-align: center
+    margin-top: 16px
+
+  .no-products
+    margin: auto
+    background: white
+    padding: 16px
+    border-radius: 4px
+
+  .products
+    background-color: #fff
+    border-radius: 4px
+    margin: 20px
+
+    div
+      &:last-child
+        hr
+          display: none
+
+    hr
+      border: 1px solid $color-gray-1
+      margin: 0 16px
+
+    .item
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      padding: 16px
+      cursor: pointer
+      text-decoration: none
+      color: $color-black
+
+      .city
+        flex-grow: 1
+        font-size: 12px
+        color: $color-gray-2
+        display: none
+
+      .product
+        display: flex
+        flex-direction: row
+        flex-grow: 1
+
+        .destock-icon
+          display: none
+
+        .picture
+          width: 108px
+          height: 108px
+          border-radius: 4px
+          margin-right: 16px
+
+        .title
+          font-size: 14px
+
+        .value
+          display: flex
+          flex-direction: row
+          padding-bottom: 16px
+
+          .price
+            font-size: 18px
+            margin-right: 10px
+
+@media (min-width: 959px)
+  .container
+    width: 80%
+
+    .products
+      .item
+        .city
+          display: block
+          width: 20%
+          margin-top: 16px
+          text-align: center
+
+        .product
+          width: 80%
+
+          .destock-icon
+            display: block
+            width: 25px
+
+          .mobile-icon
+            display: none
+
+          .picture
+            width: 180px
+            height: 180px
+
+          .title
+            font-size: 18px
+
+          .value
+            padding-bottom: 32px
+
+            .price
+              font-size: 25px
+

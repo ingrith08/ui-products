@@ -1,0 +1,18 @@
+<app-search></app-search>
+<div class="container">
+  <div *ngIf="!loading" class="section">
+    <div class="product">
+      <div class="picture">
+        <img [src]="product?.picture" [alt]="product?.title">
+      </div>
+      <div class="content">
+        <div class="text">Nuevo - 234 vendidos</div>
+        <h1 class="title">{{product?.title}}</h1>
+        <div class="amount">$ {{product?.price?.amount | thousands}}</div>
+        <button class="buy-button">Comprar</button>
+      </div>
+    </div>
+    <h2 class="subtitle">Descripción del producto</h2>
+    <p class="description">{{product?.description}}</p>
+  </div>
+</div>

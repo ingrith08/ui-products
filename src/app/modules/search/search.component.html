@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="section">
+    <img src="../../../assets/Logo_ML.png" alt="Mercado Libre" class="mb-logo">
+    <img src="../../../assets/Logo_ML@2x.png.png.png" alt="Mercado Libre" class="desktop-logo">
+    <div class="search">
+      <input [formControl]="txtInput"  (keyup.enter)="search()"  placeholder="Nunca dejes de buscar">
+      <button (click)="search()">
+        <img src="../../../assets/ic_Search.png" alt="search">
+      </button>
+    </div>
+  </div>
+</div>

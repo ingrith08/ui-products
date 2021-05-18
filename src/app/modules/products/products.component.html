@@ -1,0 +1,41 @@
+<app-search [text]="text"></app-search>
+
+<div class="container">
+  <div *ngIf="loading" class="loading">Cargando...</div>
+
+  <div *ngIf="!loading">
+    <div *ngIf="items?.length == 0" class="no-products">
+      <h2>Escribí en el buscador lo que querés encontrar.</h2>
+      <ul>
+        <li>Escribí tu búsqueda en el campo que figura en la parte superior de la pantalla.</li>
+        <li>Navegá por categorías de productos para encontrar el producto que buscás.</li>
+      </ul>
+    </div>
+
+    <div *ngIf="items?.length > 0" class="products">
+      <div *ngFor="let item of items">
+        <a class="item" [routerLink]="[item.id]">
+          <div class="product">
+            <div>
+              <img [src]="item.picture" [alt]="item.title" class="picture">
+            </div>
+            <div style="margin-top: 10px">
+              <div class="value">
+                <span class="price">$ {{item.price?.amount | thousands}}</span>
+                <div *ngIf="item.free_shipping">
+                  <img src="../../../assets/ic_shipping.png" alt="Envío gratis" class="mobile-icon">
+                  <img src="../../../assets/ic_shipping@2x.png.png.png" alt="Envío gratis" class="destock-icon">
+                </div>
+              </div>
+              <span class="title">{{item.title}}</span>
+            </div>
+          </div>
+          <div class="city">Capital Federal</div>
+        </a>
+        <hr>
+      </div>
+  </div>
+  </div>
+</div>
+
+

@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run ui-products:serve-ssr",
+    "serve:ssr": "node dist/ui-products/server/main.js",
+    "build:ssr": "ng build --prod && ng run ui-products:server:production",
+    "prerender": "ng run ui-products:prerender"
   },
   "private": true,
   "dependencies": {
@@ -18,8 +22,13 @@
     "@angular/forms": "~11.2.13",
     "@angular/platform-browser": "~11.2.13",
     "@angular/platform-browser-dynamic": "~11.2.13",
+    "@angular/platform-server": "~11.2.13",
     "@angular/router": "~11.2.13",
-    "rxjs": "~6.6.0",
+    "@ngrx/store": "^12.0.0",
+    "@nguniversal/express-engine": "^11.2.1",
+    "express": "^4.15.2",
+    "flex-layout": "^1.0.1",
+    "rxjs": "^6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
@@ -27,6 +36,8 @@
     "@angular-devkit/build-angular": "~0.1102.12",
     "@angular/cli": "~11.2.12",
     "@angular/compiler-cli": "~11.2.13",
+    "@nguniversal/builders": "^11.2.1",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
